@@ -1,9 +1,7 @@
 #pragma once
 
+#include "gepch.h"
 #include "Gem/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Gem
 {

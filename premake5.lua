@@ -10,6 +10,13 @@
 	}
 	
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+-- Include directories relative to root folder (.sln directory)
+IncludeDir = {}
+Include = {}
+Include["GLFW"] = "Gem/vendor/GLFW/include"
+
+include "Gem/Vendor/GLFW"
 	
 project "Gem"
 	location "Gem"
@@ -18,6 +25,9 @@ project "Gem"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "gepch.h"
+	pchsource "Gem/src/gepch.cpp"
 	
 	files
 	{
@@ -28,7 +38,15 @@ project "Gem"
 	includedirs
 	{
 		"%{prj.name}/src;",
-		"%{prj.name}/vendor/spdlog/include;"
+		"%{prj.name}/vendor/spdlog/include;",
+		"%{prj.name}/vendor/GLFW/include;",
+		"%{IncludeDir.GLFW}"
+	}
+	
+	links 
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 	
 	filter "system:windows" -- filters specially for windows

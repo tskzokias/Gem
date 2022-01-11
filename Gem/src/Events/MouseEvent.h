@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Gem {
 
 	class GEM_API MouseMovedEvent : public Event

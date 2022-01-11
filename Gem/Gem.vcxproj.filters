@@ -7,6 +7,12 @@
     <Filter Include="Gem">
       <UniqueIdentifier>{5EEE870B-CAF7-877C-5373-9E7CBF7B937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Events\ApplicationEvent.h">
@@ -34,6 +40,13 @@
     <ClInclude Include="src\Gem\Log.h">
       <Filter>Gem</Filter>
     </ClInclude>
+    <ClInclude Include="src\Gem\Window.h">
+      <Filter>Gem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Gem\Application.cpp">
@@ -42,5 +55,9 @@
     <ClCompile Include="src\Gem\Log.cpp">
       <Filter>Gem</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gepch.cpp" />
   </ItemGroup>
 </Project>
