@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Events">
-      <UniqueIdentifier>{3A8963B1-262B-8E87-0FE6-A1DBFB2615D8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Gem">
       <UniqueIdentifier>{5EEE870B-CAF7-877C-5373-9E7CBF7B937C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gem\Events">
+      <UniqueIdentifier>{820432AD-6EBC-73FA-D7C3-4C56C39A0EEB}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
@@ -15,18 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Events\ApplicationEvent.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Events\Event.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Events\KeyEvent.h">
-      <Filter>Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Events\MouseEvent.h">
-      <Filter>Events</Filter>
-    </ClInclude>
     <ClInclude Include="src\Gem.h" />
     <ClInclude Include="src\Gem\Application.h">
       <Filter>Gem</Filter>
@@ -35,6 +23,24 @@
       <Filter>Gem</Filter>
     </ClInclude>
     <ClInclude Include="src\Gem\EntryPoint.h">
+      <Filter>Gem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gem\Events\ApplicationEvent.h">
+      <Filter>Gem\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gem\Events\Event.h">
+      <Filter>Gem\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gem\Events\KeyEvent.h">
+      <Filter>Gem\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gem\Events\MouseEvent.h">
+      <Filter>Gem\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gem\Layer.h">
+      <Filter>Gem</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gem\LayerStack.h">
       <Filter>Gem</Filter>
     </ClInclude>
     <ClInclude Include="src\Gem\Log.h">
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Gem\Application.cpp">
+      <Filter>Gem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gem\Layer.cpp">
+      <Filter>Gem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gem\LayerStack.cpp">
       <Filter>Gem</Filter>
     </ClCompile>
     <ClCompile Include="src\Gem\Log.cpp">
