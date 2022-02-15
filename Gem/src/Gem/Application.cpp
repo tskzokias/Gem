@@ -3,7 +3,7 @@
 
 #include "Gem/Log.h"
 
-#include <GLFW/glfw3.h>
+#include <Glad/glad.h>
 
 namespace Gem
 {
@@ -14,6 +14,9 @@ namespace Gem
 		// Explicit Constructor can not verify same class that is why conversion is required
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		unsigned int id;
+		glGenVertexArrays(1, &id);
 	}
 
 	Application::~Application()

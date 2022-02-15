@@ -15,8 +15,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 Include = {}
 Include["GLFW"] = "Gem/vendor/GLFW/include"
+Include["Glad"] = "Gem/vendor/Glad/include"
 
 include "Gem/Vendor/GLFW"
+include "Gem/Vendor/Glad"
 	
 project "Gem"
 	location "Gem"
@@ -40,12 +42,16 @@ project "Gem"
 		"%{prj.name}/src;",
 		"%{prj.name}/vendor/spdlog/include;",
 		"%{prj.name}/vendor/GLFW/include;",
-		"%{IncludeDir.GLFW}"
+		"%{prj.name}/vendor/Glad/include;",
+		"%{prj.name}/vendor/Glad/src;",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 	
 	links 
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 	
@@ -58,6 +64,7 @@ project "Gem"
 		{
 			"GE_PLATFORM_WINDOWS", 
 			"GE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 			-- "_WINDLL" commented out by TheCherno
 		}
 		
@@ -98,7 +105,7 @@ project "Sandbox"
 	
 	includedirs
 	{
-		"Gem/vendor/spdlog/include;",
+		"Gem/vendor/spdlog/include",
 		"Gem/src"
 	}
 	
