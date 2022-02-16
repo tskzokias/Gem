@@ -6,6 +6,8 @@
 #include "Gem/Layer.h"
 #include "Gem/Log.h"
 
+#include "Gem/imgui/ImGuiLayer.h"
+
 // -------Entry Point---------------------------------
 #include "Gem/EntryPoint.h"
 // ---------------------------------------------------

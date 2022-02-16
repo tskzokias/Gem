@@ -7,8 +7,14 @@
     <Filter Include="Gem\Events">
       <UniqueIdentifier>{820432AD-6EBC-73FA-D7C3-4C56C39A0EEB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Gem\imgui">
+      <UniqueIdentifier>{48CA70B2-B434-2529-FD72-D6CE691C037E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -49,6 +55,15 @@
     <ClInclude Include="src\Gem\Window.h">
       <Filter>Gem</Filter>
     </ClInclude>
+    <ClInclude Include="src\Gem\imgui\ImGuiLayer.h">
+      <Filter>Gem\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -66,6 +81,12 @@
     </ClCompile>
     <ClCompile Include="src\Gem\Log.cpp">
       <Filter>Gem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gem\imgui\ImGuiLayer.cpp">
+      <Filter>Gem\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>

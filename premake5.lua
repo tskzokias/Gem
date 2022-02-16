@@ -16,9 +16,11 @@ IncludeDir = {}
 Include = {}
 Include["GLFW"] = "Gem/vendor/GLFW/include"
 Include["Glad"] = "Gem/vendor/Glad/include"
+Include["imgui"] = "Gem/vendor/imgui"
 
 include "Gem/Vendor/GLFW"
 include "Gem/Vendor/Glad"
+include "Gem/Vendor/imgui"
 	
 project "Gem"
 	location "Gem"
@@ -44,14 +46,17 @@ project "Gem"
 		"%{prj.name}/vendor/GLFW/include;",
 		"%{prj.name}/vendor/Glad/include;",
 		"%{prj.name}/vendor/Glad/src;",
+		"%{prj.name}/vendor/imgui;",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.imgui}"
 	}
 	
 	links 
 	{
 		"GLFW",
 		"Glad",
+		"imgui",
 		"opengl32.lib"
 	}
 	
