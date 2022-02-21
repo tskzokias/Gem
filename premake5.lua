@@ -26,6 +26,7 @@ project "Gem"
 	location "Gem"
 	kind "SharedLib" -- same as saying it's a dynamic library
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -62,7 +63,7 @@ project "Gem"
 	
 	filter "system:windows" -- filters specially for windows
 		cppdialect "C++17"
-		staticruntime "On"
+		--staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -75,29 +76,30 @@ project "Gem"
 		
 		postbuildcommands -- for copying Gem.dll to Sandbox
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			--("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "GE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "GE_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "GE_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
-	
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -121,7 +123,7 @@ project "Sandbox"
 	
 	filter "system:windows" -- filters specially for windows
 		cppdialect "C++17"
-		staticruntime "On"
+		--staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -131,15 +133,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "GE_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "GE_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "GE_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
